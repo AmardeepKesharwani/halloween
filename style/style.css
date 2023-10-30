@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    font-weight: 400;
+    line-height: 1.4;
+    font-size: 1em;
+    background: #000000;
+    background:linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0, 0, 0, 0.8)), url("../assets/bg-1.jpg") ;;
+    background-size: contain;
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    bottom: 0;
+    height: 100vh;
+    width: 100%;
+    max-width: 400px;
+    transform: translateX(-50%);
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+}
+
+.loader img {
+    width: 90%;
+}
+
+.loader h1 {
+    color: #fff;
+    animation: blink 1s ease infinite;
+}
+
+.loader button {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 4px;
+    background: #000;
+    color: #fff;
+    outline: none;
+    border: 1px solid #fff;
+    margin: 7px;
+    text-transform: uppercase;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.loader button.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.loader button.show~h1 {
+    display: none;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.main {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    background: url("../assets/bg.jpg");
+    background-size: cover;
+    background-position: center top;
+}
+
+.dj {
+    position: relative;
+    height: 360px;
+    width: 360px;
+    margin: auto;
+    background: gray;
+    display: flex;
+    flex-wrap: wrap;
+    transform-origin: bottom;
+    transform-style: preserve-3d;
+    transform: perspective(500px) rotateX(40deg) translateY(50px);
+}
+
+.dj::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: -30px;
+    width: 100%;
+    height: 30px;
+    transform-origin: top;
+    transform: perspective(500px) rotateX(-25deg);
+    background: #333;
+}
+
+.dj div {
+    width: calc(100% / 6);
+    height: calc(100% / 6);
+}
+
+.c1 {
+    background: #f00;
+    animation: light1 1s linear infinite;
+}
+
+.c2 {
+    background: #00f;
+    animation: light2 1s linear infinite;
+    animation-delay: 0.5s;
+
+}
+
+.c3 {
+    background: #ffff00;
+    animation: light3 1s linear infinite;
+    animation-delay: 0.7s;
+}
+
+.c4 {
+    background: #00ff00;
+    animation: light4 1s linear infinite;
+    animation-delay: 1s;
+}
+
+.c5 {
+    background: #9012ff;
+    animation: light5 1s linear infinite;
+    animation-delay: 1.2s;
+}
+
+.c6 {
+    background: #f00;
+    animation: light1 1s linear infinite;
+    animation-delay: 5s;
+}
+
+@keyframes light1 {
+
+    0%,
+    100% {
+        background: #f00;
+    }
+
+    50% {
+        background: #ffff00;
+    }
+}
+
+@keyframes light2 {
+
+    0%,
+    100% {
+        background: #00f;
+    }
+
+    50% {
+        background: #9012ff;
+    }
+}
+
+@keyframes light3 {
+
+    0%,
+    100% {
+        background: #ffff00;
+    }
+
+    50% {
+        background: #9012ff;
+    }
+}
+
+@keyframes light4 {
+
+    0%,
+    100% {
+        background: #00ff00;
+    }
+
+    50% {
+        background: #f00;
+    }
+}
+
+@keyframes light5 {
+
+    0%,
+    100% {
+        background: #9012ff;
+    }
+
+    50% {
+        background: #00ff00;
+    }
+}
+
+.dance {
+    position: absolute;
+    z-index: 6;
+}
+
+.dance img {
+    width: 200px;
+}
+
+.d1 {
+    position: absolute;
+    right: 0;
+    transform: translateX(-100%);
+    top: 35%;
+    width: 200px;
+    z-index: 6;
+}
+
+.d1 img {
+    width: 300px;
+}
+
+.d2 {
+    position: absolute;
+    left: 0%;
+    top: 50%;
+}
+
+.d3 {
+    position: absolute;
+    left: 0%;
+    transform: translateX(-90%);
+    top: 0%;
+}
+
+.d4 {
+    left: 30%;
+    top: 0%;
+}
+
+.witch {
+    position: absolute;
+    top: 0;
+    left: -20%;
+    animation: witch 10s Linear infinite;
+    animation-delay: 2s;
+}
+
+.witch img {
+    width: 180px;
+}
+
+@keyframes witch {
+    0% {
+        left: -20%;
+    }
+
+    60% {
+        left: 120%;
+    }
+
+    100% {
+        left: 120%;
+    }
+}
